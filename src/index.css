@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=Outfit:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #05050F;
+  --color-card: #0F0F1A;
+  --color-accent: #7C3AED;
+  --color-accent-secondary: #06B6D4;
+  --color-text-primary: #F0EEF8;
+  --color-text-secondary: #9CA3AF;
+
+  --font-display: "Sora", sans-serif;
+  --font-body: "Outfit", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  --radius-2xl: 1rem;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-body antialiased;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-display font-bold tracking-tight;
+  }
+}
+
+@layer components {
+  .glow-shadow {
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.15);
+  }
+  
+  .glow-shadow-hover:hover {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
+  }
+
+  .glass-card {
+    @apply bg-card border border-white/5 rounded-2xl backdrop-blur-sm;
+  }
+}
+
+/* Lenis smooth scroll */
+html.lenis {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
